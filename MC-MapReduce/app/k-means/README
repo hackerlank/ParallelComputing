@@ -1,0 +1,45 @@
+Introduction
+
+The parallel KMeans serves as a sample application of the Shared-Space
+MapReduce model. The input points comes from either randomly generated
+samples or a data file containing the coordinates; both use real
+values for the coordinates. A sample point file is also provided in
+this release, giving coordinates for five points in a casual format -
+one or several points per line, and that you can even separate the
+coordinates of a point into consecutive lines. The detailed usage for
+the utility is shown as follows:
+
+usage: ./kmeans [options] [point_file]
+options:
+  -c <cluster>  - number of clusters, the default is 1
+  -d <dim>      - dimension, the default is 3
+  -g <grid>     - grid size for generating random points, the default is 100.0
+  -r <num>      - use random points
+  -s <slot>     - MHT slot number, default is NCPU^2
+  -t <task>     - number of concurrent tasks, default is NCPU
+  -f            - use fixed initial means
+  -p            - print point set
+  -v            - be verbose
+  -h            - show this message
+
+When -r is specified, which tells the utility to generate random
+points, no point file should be given. And, one can optionally specify
+the grid size of the points through -g. Alternatively, you can also
+choose to read the points from a point file, that is, specifying the
+point file.
+
+Two methods for choosing the initial clusters are supported in this
+version, either be at random or fixed. The random method will select
+randomly coordinates for the initial clusters, however, it might
+result in fewer clusters upon completion if insufficient points are
+given. While the fixed method uses the first C points as initial
+clusters, of which C is the number of clusters and thus does not have
+this limitation.
+
+Sample Usage
+
+Work with point file:
+./kmeans -vpf -c 2 point
+
+Use random points:
+./kmeans -v -r 100000 -c 100
