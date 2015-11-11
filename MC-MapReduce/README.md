@@ -1,7 +1,7 @@
 ###MC-MapReduce - MapReduce over Multicores and Multiprocessors
 
 The goal of MC-MapReduce is to boost the performance of many
-computation-intensive application run on multicore machines via
+computation-intensive applications run on multicore machines via
 MapReduce.
 
 ###Usage Example
