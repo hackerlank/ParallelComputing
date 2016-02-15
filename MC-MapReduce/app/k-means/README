@@ -1,6 +1,4 @@
-Introduction
-
-The parallel KMeans serves as a sample application of the Shared-Space
+The parallel KMeans is an example application of the Shared-Space
 MapReduce model. The input points comes from either randomly generated
 samples or a data file containing the coordinates; both use real
 values for the coordinates. A sample point file is also provided in
